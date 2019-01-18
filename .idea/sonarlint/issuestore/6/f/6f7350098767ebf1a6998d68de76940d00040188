@@ -1,0 +1,5 @@
+
+Jsquid:S1444".Make this "public static mContext" field final(Ê®âÿÿÿÿÿ
+Lsquid:S2696"6Make the enclosing method "static" or remove this set.(ÿ¯¿)
+‡"squid:ClassVariableVisibilityCheck"TMake mContext a static final constant or non-public and provide accessors if needed.(Ê®âÿÿÿÿÿ
+Ksquid:S2209"5Change this instance-reference to a static reference.(ÿ¯¿)

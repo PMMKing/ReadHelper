@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:divider="@drawable/div"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/tv_test"
+            style="@style/main_text"
+            android:text="测试" />
+
+        <TextView
+            android:id="@+id/tv_sougou"
+            style="@style/main_text"
+            android:text="搜狗输入法" />
+
+        <TextView
+            android:id="@+id/tv_huoshanxsp"
+            style="@style/main_text"
+            android:text="火山视频" />
+
+        <TextView
+            android:id="@+id/tv_pipixia"
+            style="@style/main_text"
+            android:text="皮皮虾" />
+
+        <TextView
+            android:id="@+id/tv_xiaokuyu"
+            style="@style/main_text"
+            android:text="小酷鱼" />
+
+        <TextView
+            android:id="@+id/tv_baomihua"
+            style="@style/main_text"
+            android:text="爆米花" />
+
+        <TextView
+            android:id="@+id/tv_quanminxsp"
+            style="@style/main_text"
+            android:text="全民小视频" />
+
+
+        <TextView
+            android:id="@+id/tv_start"
+            style="@style/main_text"
+            android:text="启动" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4" />
+
+</LinearLayout>

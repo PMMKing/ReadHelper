@@ -1,0 +1,11 @@
+
+bsquid:S1192E"KDefine a constant instead of duplicating this literal "input tap " 3 times.(©¹÷³
+Psquid:S3400`"9Remove this method and declare a constant for this value.(âÒÃÚ
+_squid:CallToDeprecatedMethod&"0Remove this use of "readLine"; it is deprecated.(Õ¯Š«8Œáø,
+?squid:S1148("#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+@squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Isquid:S3010"-Remove this assignment of "dataOutputStream".(ƒ¿¾üÿÿÿÿ
+isquid:S1192O"MDefine a constant instead of duplicating this literal "input swipe " 5 times.(Ê°Ôêùÿÿÿÿ
+Osquid:S3400d"9Remove this method and declare a constant for this value.(ìËÛv
+Hsquid:S3010",Remove this assignment of "dataInputStream".(Ÿ‡ÔÑüÿÿÿÿ
