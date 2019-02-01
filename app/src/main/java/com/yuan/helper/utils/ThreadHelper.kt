@@ -15,6 +15,7 @@ import kotlin.concurrent.thread
 
 /**
  * Created by shucheng.qu on 2018/11/24
+ * @author
  */
 class ThreadHelper private constructor() {
     private val autoThread: AutoThread
@@ -45,22 +46,6 @@ class ThreadHelper private constructor() {
 
     fun addApp(vararg app: IApp) {
         autoThread.addApp(*app)
-//        thread {
-//            if (autoThread.state != Thread.State.TIMED_WAITING) {
-//                LogUtils.logd("线程故障，正在尝试重启线程Run")
-//                Thread.sleep(2000)
-//                if (autoThread.state != Thread.State.TIMED_WAITING) {
-//                    Thread.sleep(2000)
-//                    if (autoThread.state != Thread.State.TIMED_WAITING) {
-//                        try {
-//                            autoThread.run()
-//                        } catch (e: Exception) {
-//                            e.printStackTrace()
-//                        }
-//                    }
-//                }
-//            }
-//        }
     }
 
     fun stopApp() {

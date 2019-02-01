@@ -1,6 +1,7 @@
 package com.yuan.helper.utils
 
 import android.content.Intent
+import android.os.Environment
 import android.util.Log
 import com.yuan.helper.MainApp
 
@@ -27,7 +28,7 @@ class ShellHelper private constructor() {
 
     @Throws(InterruptedException::class)
     fun isPage(retry: Int = 0, name: String): Boolean {
-        var retry = retry
+        var retryVar = retry
         topActicity()
         Thread.sleep(1300)
         var readLine = ""
@@ -41,9 +42,9 @@ class ShellHelper private constructor() {
 
         LogUtils.logd(readLine)
         return if (!readLine.contains(name)) {
-            if (retry > 3) {
+            if (retryVar > 3) {
                 false
-            } else isPage(++retry, name)
+            } else isPage(++retryVar, name)
         } else true
     }
 
@@ -147,7 +148,7 @@ class ShellHelper private constructor() {
     }
 
     fun refresh() {
-        shell("am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/aaaa.mp4")
+        shell("am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file://${videoPath}")
     }
 
     companion object {
@@ -155,5 +156,7 @@ class ShellHelper private constructor() {
         private var dataOutputStream: DataOutputStream? = null
         private var dataInputStream: DataInputStream? = null
         val shell = ShellHelper()
+        val videoPath = "${Environment.getExternalStoragePublicDirectory("").path}/aaaa.mp4"
+        val sdPath = Environment.getExternalStoragePublicDirectory("").path
     }
 }

@@ -34,15 +34,15 @@ class Quanminxsp : Upload() {
         sleep(15)
         shell.click((Dimen.SCREEN_WIDTH * 0.11296).toInt(), (Dimen.SCREEN_HEIGHT * 0.25677).toInt())
         sleep(40)
-        shell.click(Dimen.SCREEN_WIDTH - Dimen.dpToPx(45), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(110))
+        shell.click(Dimen.SCREEN_WIDTH - Dimen.dpToPx(28), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(30))
         sleep(20)
-        shell.click(Dimen.SCREEN_WIDTH - Dimen.dpToPx(60), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(54))
+        shell.click(Dimen.SCREEN_WIDTH - Dimen.dpToPx(100), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(60))
         sleep(15)
         shell.click(Dimen.dpToPx(100), Dimen.dpToPx(130))
         sleep(5)
         shell.input(title)
         sleep(50)
-        shell.click(Dimen.SCREEN_WIDTH - Dimen.dpToPx(100), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(55))
+        shell.click(Dimen.SCREEN_WIDTH - Dimen.dpToPx(150), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(66))
         sleep(15)
     }
 

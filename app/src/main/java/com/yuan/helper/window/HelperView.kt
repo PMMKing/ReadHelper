@@ -5,6 +5,7 @@ import android.app.Service
 import android.content.Context
 import android.graphics.PixelFormat
 import android.os.Build
+import android.os.Environment
 import android.util.AttributeSet
 import android.view.*
 import android.widget.FrameLayout

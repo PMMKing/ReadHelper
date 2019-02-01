@@ -4,6 +4,7 @@ import com.yuan.helper.base.Upload
 import com.yuan.helper.utils.Dimen
 import com.yuan.helper.utils.DownUtils
 import com.yuan.helper.utils.SPreference
+import com.yuan.helper.utils.ShellHelper
 
 /**
  * Created by shucheng.qu on 2018/12/10
@@ -23,13 +24,13 @@ class HuoShan : Upload() {
 
     override fun setDownLoad() {
         DownUtils.setDown(SPreference.get(DownUtils.HSXSP, 3))
-        setTime(25*60)
+        setTime(25 * 60)
     }
 
     override fun upload(title: String) {
         shell.click(Dimen.SCREEN_WIDTH / 2, Dimen.SCREEN_HEIGHT - Dimen.dpToPx(20))
         sleep(5)
-        shell.click((Dimen.SCREEN_WIDTH*0.16667).toInt(), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(20))
+        shell.click((Dimen.SCREEN_WIDTH * 0.16667).toInt(), Dimen.SCREEN_HEIGHT - Dimen.dpToPx(20))
         sleep(5)
         shell.click(Dimen.SCREEN_WIDTH / 6, Dimen.dpToPx(104))
         sleep(20)
@@ -41,9 +42,9 @@ class HuoShan : Upload() {
         sleep(5)
         shell.input(title)
         sleep(5)
-        shell.click(Dimen.SCREEN_WIDTH /2, Dimen.SCREEN_HEIGHT - Dimen.dpToPx(98))
+        shell.click(Dimen.SCREEN_WIDTH / 2, Dimen.SCREEN_HEIGHT - Dimen.dpToPx(98))
         sleep(50)
-        shell.rm("/mnt/sdcard/DCIM/Camera")
+        shell.rm("${ShellHelper.sdPath}/DCIM/Camera")
     }
 
 }

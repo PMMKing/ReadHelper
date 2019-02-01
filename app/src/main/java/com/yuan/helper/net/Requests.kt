@@ -1,20 +1,13 @@
 package com.yuan.helper.net
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.alibaba.fastjson.JSON
-import com.yuan.helper.utils.FFmpegUtils
-import com.yuan.helper.utils.LogUtils
 import com.yuan.helper.utils.ShellHelper
-import okhttp3.Headers
 import okhttp3.Request
-import okhttp3.RequestBody
 import okhttp3.Response
-import org.json.JSONObject
 import java.io.File
 import java.io.FileOutputStream
 import okhttp3.FormBody
-import java.lang.Exception
 import java.util.*
 
 
@@ -61,7 +54,7 @@ object Requests {
     fun getDown(url: String, header: HashMap<String, String> = HashMap(), upload: () -> Unit) {
         val response = get(header, url)
         val bytes = response?.body()?.bytes()
-        val fileOutputStream = FileOutputStream(File("/mnt/sdcard/DCIM/aaaa.mp4"))
+        val fileOutputStream = FileOutputStream(File(ShellHelper.videoPath))
         fileOutputStream.write(bytes)
         fileOutputStream.write(Random().nextInt(9999999).toString().toByteArray())
         fileOutputStream.flush()

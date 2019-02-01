@@ -2,8 +2,12 @@ package com.yuan.helper.download
 
 import com.yuan.helper.base.Download
 import com.yuan.helper.bean.huoshan.HuoShanListBean
+import com.yuan.helper.bean.huoshan.User
 import com.yuan.helper.net.Requests
+import com.yuan.helper.utils.SPreference
+import java.util.*
 import java.util.regex.Pattern
+import kotlin.random.Random
 
 /**
  * Created by shucheng.qu on 2018/12/11
@@ -23,18 +27,22 @@ class HuoShan : Download {
         }
 
     private val header = HashMap<String, String>()
+    val USER_VIDEOS_INDEX = "user_videos_index"
+
+    private val gaoxiaoUsers = "https://hotsoon.snssdk.com/hotsoon/search/tag/48/items/?offset=0&count=10&iid=60119968919&app_name=live_stream"
+
 
     constructor(tag: Int, name: String) {
         this.name = name
         when (tag) {
             1 -> {
-                tagUrl(1714)
+                tagUrl(1716)
             }
             2 -> {
-                tagUrl(1706)
+                tagUrl(1717)
             }
             3 -> {
-                tagUrl(1703)
+                tagUrl(1715)
             }
         }
     }
@@ -51,25 +59,18 @@ class HuoShan : Download {
         val huoShanListBean = Requests.get(header, url, HuoShanListBean::class.java)
         huoShanListBean?.data?.forEach {
             val title = it.data.title.replace("@", "").replace("火山", "").replace("官方", "").replace("小助手", "").trim()
-            if (title.isEmpty() || it.type != 3 || it.data.stats.digg_count < 6000) {
+            if (title.isEmpty() || it.type != 3) {
                 return
             }
             it.data.video?.url_list?.get(0)?.let { url ->
                 Requests.getDown(url, upload = { upload(title) })
             }
         }
-    }
-
-    fun uuu(upp:(String,Int) -> Boolean){
-
-    }
-
-    private fun fff(){
-        down {
-            uuu { s, i ->
-                return@uuu true
-            }
-        }
+//        val user = Requests.get(header, gaoxiaoUsers, User::class.java)
+//        user?.data?.get(Random.nextInt(10))?.content?.user?.id?.let {
+//            var index = SPreference.get(USER_VIDEOS_INDEX, 0)
+//            val video = "https://hotsoon-a.snssdk.com/hotsoon/user/${it}/items/?offset=${index}&count=20"
+//        }
     }
 
     private fun tagUrl(tag: Int) {

@@ -5,6 +5,7 @@ import com.yuan.helper.base.Upload
 import com.yuan.helper.utils.Dimen
 import com.yuan.helper.utils.DownUtils
 import com.yuan.helper.utils.LogUtils
+import com.yuan.helper.utils.ShellHelper
 import java.io.File
 import java.lang.Exception
 
@@ -49,7 +50,7 @@ class HongYu : Upload() {
         sleep(5)
         shell.click(Dimen.SCREEN_WIDTH / 2, Dimen.dpToPx(488))
         sleep(30)
-        shell.rm("/mnt/sdcard/DCIM/yunbao")
+        shell.rm("${ShellHelper.sdPath}/DCIM/yunbao")
         sleep(20)
     }
 
